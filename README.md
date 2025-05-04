@@ -93,7 +93,7 @@ We welcome contributions! To get started:
 Please follow our [Code of Conduct](https://html5up.net/eventually) and write clean, commented code.
 
 ## 🛡 License
-MIT License. See [LICENSE](license.md) for details.
+MIT License. See [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
