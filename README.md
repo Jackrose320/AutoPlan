@@ -14,7 +14,7 @@ AutoPlan is a modern, AI-powered lesson planning tool built to save teachers tim
 
 ## 🔗 Live Demo
 
-[Try AutoPlan Now →](#try)
+[Try AutoPlan Now → WIP](#try)
 
 ## 🚀 Getting Started
 
