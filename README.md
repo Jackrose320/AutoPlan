@@ -2,7 +2,7 @@
 
 AutoPlan is a modern, AI-powered lesson planning tool built to save teachers time and reduce stress. It generates full, standards-aligned lesson plans in seconds — so educators can focus on what matters most: teaching.
 
-![AutoPlan Logo](public/autoplan-icon.png)
+![AutoPlan Logo](public/autoplan-full.png)
 
 ## 🌟 Features
 
