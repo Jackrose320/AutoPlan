@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,9 +15,11 @@ html {
   scroll-behavior: smooth;
 }
 .custom-header {
+  z-index: 50;
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100px;
   left: 0;
   top: 0;
   padding: 1rem;
@@ -59,7 +63,7 @@ html {
 
 section {
   padding: 2rem 1rem;
-  background-image: url('bg-image.png');
+  background-image: url('bg-image1.png');
   border-color: lightgray;
   border-width: 4px;
   border-style: none none dashed none;
@@ -73,9 +77,15 @@ body {
   background-color: white;
 }
 
+input::placeholder {
+  font-size: 0.8rem;
+}
+
 .container {
   width: 100%;
-  max-width: 1280px;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
   margin-left: auto;
   margin-top: 6rem;
   margin-right: auto;
@@ -83,10 +93,46 @@ body {
   padding-right: 1rem;
 }
 
+.loading-text {
+  margin-top: 6rem;
+  color: #2563eb;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.plan-container {
+  border: 1px solid #e5e7eb; /* Light gray border for a subtle, clean look */
+  padding: 22px; /* Add some padding for better spacing */
+  max-width: 700px; /* Increase max width to make it more spacious */
+  margin: 30px auto; /* Centering and margin for spacing */
+  background-color: white;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer, more professional shadow */
+  font-family: 'Poppins', sans-serif; /* Using a modern font */
+
+  /* Lined-paper effect */
+  background-image: url('/notepad-bg.png'); /* Replace with your file path */
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.plan-container h4 {
+  font-size: 1.25rem;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.plan-container em {
+  font-style: italic;
+  color: #2563eb; /* Use a soft blue to differentiate the topic */
 }
 
 a {
@@ -100,10 +146,24 @@ a:hover {
 
 button {
   cursor: pointer;
+
+  display: inline-block;
+  margin-top: 20px; /* Optional: Adjust the margin for spacing */
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+button:hover {
+  color: #2563eb;
 }
 
 h1, h2, h3, h4 {
   color: #111827; /* text-gray-900 */
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
 }
 
 section {
@@ -138,11 +198,20 @@ ul {
 .bg-blue-600:hover {
   background-color:rgb(255, 255, 255);
   border-width: 1px;
+  font-color: black;
   border-color: black;
+}
+
+.bg-blue-600:active {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
 }
 
 .text-white {
   color: #ffffff;
+}
+.text-white2:hover {
+  color: black !important;
 }
 
 .text-gray-800 {
@@ -193,6 +262,9 @@ ul {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .ml-max {
   margin-left: 18rem;
 }
@@ -210,6 +282,14 @@ ul {
 
 .mb-12 {
   margin-bottom: 3rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .max-w-xl {
