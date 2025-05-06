@@ -1,0 +1,266 @@
+.no-overflow {
+  overflow: hidden;
+}
+
+.overflow-y {
+  overflow-y: scroll;
+}
+
+/* Light Theme (default) */
+.light-theme {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #f5f5f5;
+}
+
+.settings-container,
+.help-center-form {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+:root {
+  --base-font-size: medium; /* default */
+}
+
+body,
+.settings-container {
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit; /* Inherit the global font size */
+}
+
+:root[style*="--base-font-size: small"] {
+  --base-font-size: 12px;
+}
+
+:root[style*="--base-font-size: medium"] {
+  --base-font-size: 20px;
+}
+
+:root[style*="--base-font-size: large"] {
+  --base-font-size: 999px;
+}
+
+.reduced-motion .fade-animation,
+.reduced-motion .fade-animation-Appearance,
+.reduced-motion .fade-animation-Privacy,
+.reduced-motion .fade-animation-Notifications,
+.reduced-motion .fade-animation-Premium,
+.reduced-motion .fade-animation-HelpCenter {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.settings-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-right: 1px solid #dee2e6;
+  padding: 2rem;
+}
+
+.sidebar-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: 700; /* Bolder title */
+}
+
+.settings-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 0.75rem 0; /* Increased padding */
+  font-size: 1.1rem; /* Slightly larger text */
+  cursor: pointer;
+  color: #495057;
+}
+
+.nav-item.active {
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.settings-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  flex-grow: 1;
+  max-width: 50%;
+  padding: 3rem;
+}
+
+/* Premium Page */
+.premium-container {
+  text-align: center;
+}
+
+.premium-intro {
+  font-size: 1.2rem; /* Slightly larger text */
+  font-weight: 500; /* Medium-bold font for clarity */
+  color: #495057; /* Dark gray for professional look */
+  text-align: center; /* Center-align for balance */
+  margin-bottom: 20px; /* Space between message and benefits list */
+  padding: 10px; /* Adds some breathing room */
+  line-height: 1.6; /* Improves readability */
+}
+
+.premium-title {
+  font-size: 1.8rem;
+  font-weight: bold; /* Make "Premium Benefits" bold */
+}
+
+.premium-benefits {
+  font-size: 1.2rem; /* Increase benefits text size */
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.premium-image {
+  width: 150px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.premium-container,
+.premium-benefits,
+.premium-title,
+.premium-intro,
+.nav-item,
+.sidebar-title,
+h2 {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.btn,
+.form-control,
+.secondary-button,
+.primary-button {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.dashboard-title,
+.dashboard-subtitle {
+  background-color: transparent;
+  color: black;
+}
+
+.helpcenter {
+  margin-bottom: 12px;
+}
+
+.form-control {
+  width: 250px; /* Keeps dropdowns from stretching too far */
+  max-width: 100%; /* Ensures responsiveness */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Stack label and input */
+  gap: 5px; /* Adds spacing between label and input */
+}
+
+.help-center-form {
+  border: 2px solid #dee2e6; /* Light gray border */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for a cleaner look */
+  width: 100%; /* Ensure it spans properly */
+  max-width: 600px; /* Prevent it from stretching too much */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.help-email-label,
+.help-message-label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+#helpEmail,
+#helpMessage {
+  height: 50px; /* Bigger input fields */
+  background-color: var(--background-color); /* Off-white background */
+  color: var(--text-color); /* Dark-gray text */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#helpMessage {
+  height: 150px; /* Bigger textarea */
+}
+
+.help-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.help-center-button {
+  margin-top: 10px; /* Adjusted spacing */
+}
+
+/* Notifications, Privacy, Appearance */
+.choice-box {
+  font-size: 1.2rem; /* Bigger choice box text */
+  padding: 10px;
+}
+
+/* Animations: */
+.fade-animation {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.fade-animation-Appearance,
+.fade-animation-Privacy,
+.fade-animation-Notifications,
+.fade-animation-Premium,
+.fade-animation-HelpCenter {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Helpers: */
+
+.bigfont {
+  font-size: 1rem;
+}
+
+.btn-success:disabled {
+  background-color: #28a745 !important; /* Ensures green color */
+  border-color: #28a745 !important;
+  color: white !important;
+}

@@ -1,15 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.html, body, footer, #root {
+/* FOR DEBUGGING:
+* {
+  outline: 1px solid red;
+}
+*/
+
+.html,
+body,
+footer,
+#root {
   width: 100%;
   height: 100%;
   background-color: white;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -28,17 +38,17 @@ html {
   overflow-y: hidden;
 }
 .custom-header::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 4px; /* Adjust the thickness of the border */
-  background: linear-gradient(to right,cyan,salmon); /* Gradient colors */
+  background: linear-gradient(to right, cyan, salmon); /* Gradient colors */
 }
 
 .title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-left: 15px;
   font-size: 50px;
   font-weight: bolder;
@@ -46,14 +56,16 @@ html {
 
 .nav-container {
   display: flex;
-  gap: 1rem;
   margin-left: auto;
+  padding-right: 2rem;
+  gap: 1rem;
 }
 
 .nav-links {
   border-color: black;
   border-width: 2px;
   padding: 0 10px 0 0;
+  font-size: 20px;
   border-style: none dashed none none;
 }
 
@@ -63,17 +75,16 @@ html {
 
 section {
   padding: 2rem 1rem;
-  background-image: url('bg-image1.png');
-  border-color: lightgray;
-  border-width: 4px;
-  border-style: none none dashed none;
-
+  background: none;
+  border-color: rgb(0, 0, 0, 0.1);
+  border-width: 6px;
+  border-style: none none dotted none;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: circular, "Segoe Ui", sans-serif;
   background-color: white;
 }
 
@@ -87,7 +98,7 @@ input::placeholder {
   overflow: hidden;
   max-width: 100%;
   margin-left: auto;
-  margin-top: 6rem;
+  margin-top: 13rem;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -97,7 +108,7 @@ input::placeholder {
   margin-top: 6rem;
   color: #2563eb;
   font-weight: bold;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
 }
 
@@ -115,10 +126,10 @@ input::placeholder {
   background-color: white;
   border-radius: 12px; /* Slightly more rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer, more professional shadow */
-  font-family: 'Poppins', sans-serif; /* Using a modern font */
+  font-family: "Poppins", sans-serif; /* Using a modern font */
 
   /* Lined-paper effect */
-  background-image: url('/notepad-bg.png'); /* Replace with your file path */
+  background-image: url("/notepad-bg.png"); /* Replace with your file path */
   background-repeat: repeat-y;
   background-size: cover;
 }
@@ -133,6 +144,13 @@ input::placeholder {
 .plan-container em {
   font-style: italic;
   color: #2563eb; /* Use a soft blue to differentiate the topic */
+}
+
+.profile {
+  width: 20%;
+  border-radius: 10px;
+  border: 4px solid rgb(128, 128, 128, 0.4);
+  box-shadow: 5px 3px 4px black;
 }
 
 a {
@@ -157,13 +175,20 @@ button:hover {
   color: #2563eb;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: #111827; /* text-gray-900 */
 }
 
 hr.rounded {
   border-top: 8px solid #bbb;
   border-radius: 5px;
+}
+
+img {
+  cursor: default !important;
 }
 
 section {
@@ -196,7 +221,7 @@ ul {
 }
 
 .bg-blue-600:hover {
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-width: 1px;
   font-color: black;
   border-color: black;
@@ -317,10 +342,24 @@ ul {
   border-top: 1px solid #e5e7eb;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.default-cursor {
+  cursor: default !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
 .transition {
   transition: all 0.2s ease-in-out;
 }
-.font-semibold, .font-bold {
+.font-semibold,
+.font-bold {
   font-weight: bold;
 }
 .fixed {
