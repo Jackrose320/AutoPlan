@@ -1,0 +1,157 @@
+.custom-header {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 5rem;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  position: fixed;
+  overflow-y: hidden;
+}
+
+.custom-header::after {
+  /* Bottom border gradient */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, cyan, rgb(255, 9, 222));
+}
+
+/* NavBar css: */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-left: auto;
+  height: 80px;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.menubutton {
+  margin: 0;
+  background-color: #2563eb; /* Modern blue */
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menubutton:hover {
+  background-color: rgb(255, 255, 255); /* Darker blue */
+  transform: scale(1.05); /* Slight enlargement */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: blue;
+}
+
+.menubutton:active {
+  transform: scale(0.95); /* Press effect */
+}
+
+/* LandingBar / global css: */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+.navtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  color: black;
+
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.nav-container {
+  display: flex;
+  margin-left: auto;
+  padding-right: 2rem;
+  gap: 1rem;
+}
+
+.nav-links {
+  border-color: black;
+  color: black;
+  border-width: 2px;
+  padding: 0 10px 0 0;
+  font-size: 20px;
+  border-style: none dashed none none;
+}
+
+.nav-links-last {
+  border-style: none;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: circular, "Segoe Ui", sans-serif;
+  background-color: white;
+}
+
+button:hover {
+  color: #2563eb;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #2563eb; /* blue-600 */
+}
+
+body,
+#root {
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}

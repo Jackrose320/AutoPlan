@@ -1,13 +1,43 @@
-import "./SettingsPage.css";
-import "./App.css";
-import { useNavigate } from "react-router-dom";
+import "./styles/SettingsPage.css";
+import "./styles/App.css";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState, useRef } from "react";
 
 function SettingsPage() {
+  // Navigation:
   const navigate = useNavigate();
   const { user, isLoaded, isSignedIn } = useUser();
-  const [selectedSection, setSelectedSection] = useState("Appearance");
+
+  // Search Parameters for changing section:
+  const sectionLabels = {
+    Appearance: "Appearance",
+    Privacy: "Privacy",
+    Notifications: "Notifications",
+    Premium: "Premium",
+    HelpCenter: "Help Center",
+  };
+  const validSections = Object.keys(sectionLabels);
+  const [searchParams] = useSearchParams();
+  const [selectedSection, setSelectedSection] = useState(() => {
+    const section = searchParams.get("section");
+    return validSections.includes(section) ? section : "Appearance";
+  });
+
+  /**
+   * Settings in order:
+   * Light/dark theme
+   * Email notifications
+   * Set profile private
+   * Change font size
+   * Reduce motion
+   * Show online status
+   * Index for search engines
+   * Notifications
+   * SMS Alerts
+   * Premium
+   * Submit for help
+   */
   const [theme, setTheme] = useState("light");
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [privateProfile, setPrivateProfile] = useState(false);
@@ -39,7 +69,7 @@ function SettingsPage() {
   }, [isLoaded, isSignedIn, navigate]);
 
   const handleBack = () => {
-    navigate("/dashboard");
+    navigate(-1);
   };
 
   {
@@ -267,7 +297,7 @@ function SettingsPage() {
           </div>
         );
 
-      case "Help Center":
+      case "HelpCenter":
         return (
           <div>
             <h2>Help Center</h2>
@@ -332,21 +362,18 @@ function SettingsPage() {
       <div className="sidebar">
         <h3 className="sidebar-title">Settings</h3>
         <ul className="settings-nav">
-          {[
-            "Appearance",
-            "Privacy",
-            "Notifications",
-            "Premium",
-            "Help Center",
-          ].map((section) => (
+          {validSections.map((section) => (
             <li
               key={section}
               className={`nav-item ${
                 selectedSection === section ? "active" : ""
               }`}
-              onClick={() => setSelectedSection(section)}
+              onClick={() => {
+                setSelectedSection(section);
+                setSearchParams({ section });
+              }}
             >
-              {section}
+              {sectionLabels[section]}
             </li>
           ))}
         </ul>

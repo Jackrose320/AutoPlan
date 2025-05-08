@@ -152,14 +152,6 @@ h2 {
   color: var(--text-color);
 }
 
-.btn,
-.form-control,
-.secondary-button,
-.primary-button {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
 .dashboard-title,
 .dashboard-subtitle {
   background-color: transparent;

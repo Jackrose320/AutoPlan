@@ -1,0 +1,110 @@
+#root,
+body {
+  background-color: var(--background-color);
+}
+
+.my-lessons-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  min-width: 20rem;
+}
+
+.my-lessons-header {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-top: 5rem;
+  border: 2px solid white;
+  background: linear-gradient(to right, #3eaa8f, #feb47b, #6e7dff);
+  padding: 1rem;
+}
+
+.my-lessons-header h2 {
+  text-shadow: 0 2px 3px black;
+  color: white;
+  background-color: transparent;
+}
+
+.lesson-controls {
+  display: flex;
+  align-items: center; /* Ensure children are vertically aligned */
+  gap: 1rem;
+  margin: 0; /* Remove any default margin pushing it down */
+}
+
+.lesson-controls button {
+  white-space: nowrap;
+}
+
+.lesson-controls select,
+.lesson-controls button {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 3px black;
+}
+
+.form-select {
+  height: 40px;
+}
+
+.lesson-controls select {
+  margin-right: 1rem;
+}
+
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson-card {
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--card-bg, #f9f9f9);
+  transition: box-shadow 0.2s ease;
+}
+
+.lesson-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.lesson-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  font-weight: bold;
+}
+
+.published .badge {
+  color: green;
+}
+
+.draft .badge {
+  color: orange;
+}
+
+.archived .badge {
+  color: gray;
+}
+
+.no-lessons {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}

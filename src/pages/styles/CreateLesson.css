@@ -1,0 +1,30 @@
+.create-lesson-container {
+  padding: 0 !important;
+  margin: 0 auto; /* This centers it */
+  color: black;
+}
+
+.form-label {
+  margin-right: 10px;
+}
+
+.form-select {
+  width: 10rem;
+}
+
+.card h2 {
+  font-weight: bold;
+}
+
+textarea {
+  margin-top: 5px;
+  resize: vertical;
+}
+
+.btn {
+  margin-right: 1rem;
+}
+
+.btn:active {
+  transform: scale(1.1);
+}

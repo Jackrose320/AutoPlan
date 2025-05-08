@@ -1,8 +1,9 @@
-import "./App.css";
+import "./styles/App.css";
 import { SignInButton, useUser } from "@clerk/clerk-react"; // Add this import
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import VantaBackground from "./components/VantaBackground";
+import NavBar from "./components/LandingBar";
 
 function LandingPage() {
   const { user, isLoaded } = useUser();
@@ -17,50 +18,13 @@ function LandingPage() {
   }, [isLoaded, user, navigate, location.state]);
 
   return (
-    <div className="font-sans text-gray-800 w-full min-h-screen bg-white">
+    <div className="font-sans text-white w-full min-h-screen bg-white">
       {/* Header */}
-      <header className="custom-header">
-        <div className="logo-container">
-          <img src="/autoplan-icon.png" width="40"></img>
-        </div>
-        <h1 className="title">AutoPlan</h1>
-        <div className="nav-container">
-          <a href="#about" className="nav-links">
-            About
-          </a>
-          <a href="#features" className="nav-links">
-            Features
-          </a>
-          <a href="#meetus" className="nav-links">
-            Meet Us
-          </a>
-          <a
-            href={isLoaded && user ? "/dashboard" : "#try"}
-            className="nav-links nav-links-last"
-          >
-            {isLoaded && user ? "Dashboard" : "Try Free"}
-          </a>
-        </div>
-      </header>
+      <NavBar />
       <VantaBackground>
         {/* Hero */}
-        <section className="text-center min-h-screen py-20 w-full" id="try">
+        <section className="text-center min-h-screen py-b-20 w-full" id="try">
           <div className="container">
-            {/* Hero Image Placeholder */}
-            <div
-              style={{
-                backgroundImage: 'url("gears.gif")',
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                width: "200px",
-                height: "200px",
-                margin: "0 auto",
-                pointerEvents: "none", // Prevent interaction
-                userSelect: "none", // Prevent text/image selection
-              }}
-              onContextMenu={(e) => e.preventDefault()}
-            />
-
             <h2 className="mb-4 font-semibold title">
               Lesson Planning, Automated.
             </h2>
@@ -89,17 +53,22 @@ function LandingPage() {
 
         {/* About */}
         <section id="about" className="py-20">
-          <h3 className="text-center mb-12 font-semibold title">
+          <h3 className="text-white text-center mb-12 font-semibold title">
             What is AutoPlan?
           </h3>
-          <div className="text-center">
-            <img
-              src="/ask.png"
-              alt="Question.png"
-              draggable="false"
-              className="mb-6 mx-auto"
-            ></img>
-          </div>
+          <div
+            style={{
+              backgroundImage: 'url("gears.gif")',
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              width: "200px",
+              height: "200px",
+              margin: "0 auto",
+              pointerEvents: "none", // Prevent interaction
+              userSelect: "none", // Prevent text/image selection
+            }}
+            onContextMenu={(e) => e.preventDefault()}
+          />
           <div className="max-w-4xl mx-auto text-center px-4">
             <p className="text-lg mb-6">
               AutoPlan is an AI-powered platform designed to revolutionize the
@@ -117,7 +86,7 @@ function LandingPage() {
 
         {/* Features */}
         <section id="features">
-          <h3 className="text-center mb-12 font-semibold title">
+          <h3 className="text-white text-center mb-12 font-semibold title">
             Key Features
           </h3>
           <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -128,7 +97,7 @@ function LandingPage() {
                 className="w-16 h-16 mx-auto mb-3"
                 draggable="false"
               />
-              <h4 className="text-xl font-semibold mb-2">
+              <h4 className="text-white text-xl font-semibold mb-2">
                 AI Lesson Generator
               </h4>
               <p>
@@ -142,7 +111,9 @@ function LandingPage() {
                 className="w-16 h-16 mx-auto mb-3"
                 draggable="false"
               />
-              <h4 className="text-xl font-semibold mb-2">Standards-Aligned</h4>
+              <h4 className="text-white text-xl font-semibold mb-2">
+                Standards-Aligned
+              </h4>
               <p>
                 Plans map to Common Core or your local curriculum guidelines.
               </p>
@@ -154,7 +125,9 @@ function LandingPage() {
                 className="w-16 h-16 mx-auto mb-3"
                 draggable="false"
               />
-              <h4 className="text-xl font-semibold mb-2">Export Ready</h4>
+              <h4 className="text-white text-xl font-semibold mb-2">
+                Export Ready
+              </h4>
               <p>Download to PDF or copy to Google Docs with one click.</p>
             </div>
           </div>
@@ -162,10 +135,16 @@ function LandingPage() {
 
         {/* Meet Us */}
         <section id="meetus">
-          <h3 className="text-center mb-6 font-semibold title">Who Are We?</h3>
+          <h3 className="text-white text-center mb-6 font-semibold title">
+            Who Are We?
+          </h3>
           <hr
             style={{
               width: "75%",
+              borderWidth: "10px",
+              borderStyle: "solid",
+              borderRadius: "5px",
+              marginBottom: "40px",
             }}
           />
           <div className="text-center profile-container">
@@ -174,7 +153,7 @@ function LandingPage() {
               className="mb-6 mx-auto profile"
             ></img>
           </div>
-          <p className="text-center mx-auto">
+          <p className="text-center mx-auto px-20">
             <span className="font-semibold">
               Spoiler: It’s just me. Hi. 👋{" "}
             </span>
@@ -185,7 +164,7 @@ function LandingPage() {
             vision for what planning should feel like:{" "}
             <i>fast, simple, and personal</i>.
           </p>
-          <p className="text-center mx-auto">
+          <p className="text-center mx-auto px-20">
             <span className="font-semibold">So, who am I?</span>
             <br /> I’m Jack, a data-driven thinker and lifelong builder. I’m
             currently pursuing a Master’s in Data Analytics with an MBA and a
@@ -198,7 +177,7 @@ function LandingPage() {
             structure without micromanaging my day. Nothing out there quite fit.
             So I made it myself.
           </p>
-          <p className="text-center mx-auto">
+          <p className="text-center mx-auto px-20">
             <span className="font-semibold">Why I built AutoPlan:</span>
             <br /> There’s a certain kind of person — maybe you’re one of them —
             who wants to do a lot, but doesn’t want to waste time telling a
@@ -212,9 +191,15 @@ function LandingPage() {
         </section>
 
         {/* Footer */}
-        <footer className="text-center py-6 text-sm text-gray-500">
+        <footer className="footer text-center py-6 text-sm text-gray-800">
           {/* Footer Badge Image */}
-          <div>
+          <div
+            style={{
+              marginTop: "-20px",
+              marginBottom: "-15px",
+              textAlign: "center",
+            }}
+          >
             <a href="https://openai.com" target="_blank">
               <img
                 src="/openai-badge.png"
